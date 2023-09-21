@@ -1,7 +1,7 @@
 import 'package:bookly_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import 'package:sizer/sizer.dart';
 import 'features/splash/data/presentation/views/splash_view.dart';
 
 void main() {
@@ -13,12 +13,14 @@ class BooklyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      theme: ThemeData(brightness: Brightness.dark).copyWith(
-        scaffoldBackgroundColor: kPrimaryColor,
-      ),
-      debugShowCheckedModeBanner: false,
-      home: const SplashView(),
-    );
+    return Sizer(builder: (context, orientation, deviceType) {
+      return GetMaterialApp(
+        theme: ThemeData(brightness: Brightness.dark).copyWith(
+          scaffoldBackgroundColor: kPrimaryColor,
+        ),
+        debugShowCheckedModeBanner: false,
+        home: const SplashView(),
+      );
+    });
   }
 }
