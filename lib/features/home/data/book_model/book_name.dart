@@ -5,7 +5,7 @@ import 'sale_info.dart';
 import 'search_info.dart';
 import 'volume_info.dart';
 
-class BookName {
+class BookModel {
   final String? kind;
   final String? id;
   final String? etag;
@@ -15,7 +15,7 @@ class BookName {
   final AccessInfo? accessInfo;
   final SearchInfo? searchInfo;
 
-  const BookName({
+  const BookModel({
     this.kind,
     this.id,
     this.etag,
@@ -26,7 +26,7 @@ class BookName {
     this.searchInfo,
   });
 
-  factory BookName.fromMap(Map<String, dynamic> data) => BookName(
+  factory BookModel.fromMap(Map<String, dynamic> data) => BookModel(
         kind: data['kind'] as String?,
         id: data['id'] as String?,
         etag: data['etag'] as String?,
@@ -58,13 +58,13 @@ class BookName {
 
   /// `dart:convert`
   ///
-  /// Parses the string and returns the resulting Json object as [BookName].
-  factory BookName.fromJson(String data) {
-    return BookName.fromMap(json.decode(data) as Map<String, dynamic>);
+  /// Parses the string and returns the resulting Json object as [BookModel].
+  factory BookModel.fromJson(String data) {
+    return BookModel.fromMap(json.decode(data) as Map<String, dynamic>);
   }
 
   /// `dart:convert`
   ///
-  /// Converts [BookName] to a JSON string.
+  /// Converts [BookModel] to a JSON string.
   String toJson() => json.encode(toMap());
 }
