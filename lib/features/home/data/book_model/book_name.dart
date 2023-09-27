@@ -26,7 +26,7 @@ class BookModel {
     this.searchInfo,
   });
 
-  factory BookModel.fromMap(Map<String, dynamic> data) => BookModel(
+  factory BookModel.fromJson(Map<String, dynamic> data) => BookModel(
         kind: data['kind'] as String?,
         id: data['id'] as String?,
         etag: data['etag'] as String?,
@@ -45,26 +45,26 @@ class BookModel {
             : SearchInfo.fromMap(data['searchInfo'] as Map<String, dynamic>),
       );
 
-  Map<String, dynamic> toMap() => {
-        'kind': kind,
-        'id': id,
-        'etag': etag,
-        'selfLink': selfLink,
-        'volumeInfo': volumeInfo?.toMap(),
-        'saleInfo': saleInfo?.toMap(),
-        'accessInfo': accessInfo?.toMap(),
-        'searchInfo': searchInfo?.toMap(),
-      };
+  // Map<String, dynamic> toMap() => {
+  //       'kind': kind,
+  //       'id': id,
+  //       'etag': etag,
+  //       'selfLink': selfLink,
+  //       'volumeInfo': volumeInfo?.toMap(),
+  //       'saleInfo': saleInfo?.toMap(),
+  //       'accessInfo': accessInfo?.toMap(),
+  //       'searchInfo': searchInfo?.toMap(),
+  //     };
 
-  /// `dart:convert`
-  ///
-  /// Parses the string and returns the resulting Json object as [BookModel].
-  factory BookModel.fromJson(String data) {
-    return BookModel.fromMap(json.decode(data) as Map<String, dynamic>);
-  }
+  // /// `dart:convert`
+  // ///
+  // /// Parses the string and returns the resulting Json object as [BookModel].
+  // factory BookModel.fromJson(String data) {
+  //   return BookModel.fromMap(json.decode(data) as Map<String, dynamic>);
+  // }
 
-  /// `dart:convert`
-  ///
-  /// Converts [BookModel] to a JSON string.
-  String toJson() => json.encode(toMap());
+  // /// `dart:convert`
+  // ///
+  // /// Converts [BookModel] to a JSON string.
+  // String toJson() => json.encode(toMap());
 }
