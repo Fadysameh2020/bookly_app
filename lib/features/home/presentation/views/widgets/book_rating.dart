@@ -2,8 +2,9 @@ import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class BookRating extends StatelessWidget {
-  const BookRating({super.key});
-
+  const BookRating({super.key, required this.pages, required this.bookType});
+  final int pages;
+  final String bookType;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -17,7 +18,7 @@ class BookRating extends StatelessWidget {
           width: 6.3,
         ),
         Text(
-          '4.8',
+          pages.toString(),
           style: Styles.textStyle16,
         ),
         const SizedBox(
@@ -26,7 +27,7 @@ class BookRating extends StatelessWidget {
         Opacity(
           opacity: .5,
           child: Text(
-            '(2390)',
+            '($bookType)',
             style: Styles.textStyle14.copyWith(fontWeight: FontWeight.w600),
           ),
         ),
