@@ -51,7 +51,9 @@ class BookDetailsViewBody extends StatelessWidget {
                   bookType: bookModel.volumeInfo?.printType ?? '',
                 ),
                 SizedBox(height: 4.h),
-                const BooksAction(),
+                BooksAction(
+                  bookModel: bookModel,
+                ),
                 SizedBox(height: 4.h),
                 Align(
                   alignment: Alignment.centerLeft,
